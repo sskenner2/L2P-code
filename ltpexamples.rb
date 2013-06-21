@@ -1,7 +1,179 @@
+# ch 13 Creating New Classes, Changing Existing Ones
+
+# win 6/20 >>>>> 
+# win >>>>>>>>>> 
+# win >>>>>>>>>> 
+
+=begin
+class Integer
+  def to_eng
+    if self == 5
+      english = 'five'
+    else
+      english = 'forty-two'
+    end
+
+    english
+  end
+end
+
+puts 5.to_eng
+puts 42.to_eng
+puts 50.to_eng # wack .. still forty-two
+=end
+
+# ch 12
+
+# 12.7 Classes and the Class Class
+
+=begin
+puts(42.class)
+puts("i'll have mayonnaise on mine!".class)
+puts(Time.new.class)
+puts(Time.class)
+puts(String.class)
+
+puts(Class.class)
+=end
+
+# 12.6 
+
+=begin
+def method_2
+  if false
+    'only if condition is true'
+  else
+      'only if condition is false'
+  end
+end
+
+puts method_2
+=end
+
+# >>>>>>> mac
+# >>>>>>> mac
+# >>>>>>> mac
+
+=begin
+prof = "We tore the universe a new space-hole, alright!"
+puts prof[12, 8]
+puts prof[12..9] # 8 characters tot
+puts
+def is_avi? filename
+  filename.downcase[-4..-1] == '.avi'
+end
+
+puts is_avi?('dancemonkeyboy.avi')
+
+puts is_avi?('toilet_paper_fiasco.jpg')
+=end
+
+=begin
+da_man = 'Mr. T'
+big_T = da_man[4]
+puts big_T
+
+puts "Hello. My name is Julian."
+puts "I'm extremely perceptive."
+puts "What's your name?"
+
+name = gets.chomp
+puts "Hi, #{name}"
+
+if name[0] == 'C' || name[0] == 'c'
+  puts 'You have an excellent taste in footwear.'
+  puts 'I can just tell.'
+end
+=end
+
+=begin
+god_bless_the_70s = 1970..1979
+puts god_bless_the_70s.min
+puts god_bless_the_70s.max
+puts(god_bless_the_70s.include?(1979))
+puts(god_bless_the_70s.include?(1980))
+puts(god_bless_the_70s.include?(1974.5))
+=end
+
+=begin
+# range literal
+letters = 'a'..'c'
+
+# convert range to array
+puts(%w[a b c] == letters.to_a)
+
+# iterate over a range
+('A'..'Z').each do |letter|
+  print letter
+end
+puts
+=end
+
+=begin
+weird_hash = Hash.new
+
+weird_hash[12] = 'monkeys'
+weird_hash[[]] = 'emptiness'
+weird_hash[Time.new] = 'no time like the present'
+
+weird_hash
+=end
+
+=begin 
+dict_array = []   # array literal; same as Array.new
+dict_hash = {}    # hash literal; same as Hash.new
+
+dict_array[0] = 'candle'
+dict_array[1] = 'glasses'
+dict_array[2] = 'truck'
+dict_array[3] = 'Alicia'
+dict_hash['shia-a'] = 'candle'
+dict_hash['shaya'] = 'glasses'
+dict_hash['shasha'] = 'truck'
+dict_hash['sh-sha'] = 'Alicia'
+
+#dict_array.each do |word|
+#  puts word
+#end
+dict_array.each { |word| puts word }
+
+#dict_hash.each do |c_word, word|
+#  puts "#{c_word}: #{word}"
+#end
+dict_hash.each { |c_word, word| puts "#{c_word}: #{word}"}
+=end
+
+=begin
+Time.gm(1955, 11, 5)  # a red letter day
+
+Time.local(2000, 1, 1)           # Y2K
+Time.local(1976, 8, 3, 13, 31)   # authors birth
+
+puts Time.local(2000, 1, 1)           # Y2K
+puts Time.local(1976, 8, 3, 13, 31)   # authors birth
+=end
+
+=begin
+time = Time.new     # the moment we ran this code
+time2 = time + 60   # one minute later
+
+puts time
+puts time2
+=end
+
+=begin
+
+alpha = Array.new + [12345]   # array addition
+beta = String.new + 'hello'   # string addition
+karma = Time.new    # current date and time
+
+puts "alpha = #{alpha}"
+puts "beta = #{beta}"
+puts "karma = #{karma}"
+
+=end
+
 # ch 11
-
-
-#
 
 =begin
 require 'yaml'
